@@ -1,0 +1,75 @@
+@use "../util";
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  color: var(--almost-black);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: util.$font;
+  background-color: var(--main-back-color);
+  color: var(--almost-black);
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.active-modal {
+  overflow: hidden;
+  scroll-behavior: none;
+}
+
+.reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.together {
+  margin-bottom: -3rem;
+}
+
+.footer-width {
+  width: 25rem;
+}
+
+.column-left {
+  display: flex;
+  flex-direction: column;
+}
+.column-middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  a {
+    padding-bottom: 7px;
+    &:hover {
+      color: var(--blueish);
+      filter: brightness(1.7);
+    }
+  }
+}
+.footer-right {
+  display: flex;
+  flex-direction: column;
+}
+.f-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.away-right {
+  margin-right: 2rem;
+}

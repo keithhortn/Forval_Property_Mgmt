@@ -1,0 +1,658 @@
+@forward "globals";
+
+// MIXINS FOR FLEXBOX
+@mixin center-row-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin center-column-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin center-space-between-column-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin space-between-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin space-evenly-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Styles for Wrapper
+.wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// STYLES FOR TOP NAVIGATION
+// Styles for Navbar
+.navbar-container {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  background-color: var(--navigation-back-color);
+  box-shadow: var(--simple-box-shadow);
+  @include space-between-flex;
+  padding: 0 1rem;
+
+  .flex-left {
+    @include space-evenly-flex;
+  }
+  .hamburger-container {
+    height: 2.5rem;
+    width: fit-content;
+    margin-right: 1rem;
+    @include center-column-flex;
+    .bars {
+      width: 1.5rem;
+      height: 3px;
+      border-radius: 15px;
+      margin-bottom: 0.25rem;
+      background-color: var(--almost-black);
+      box-shadow: var(--simple-box-shadow);
+    }
+  }
+  .top-logo {
+    width: 4rem;
+    margin-right: 1rem;
+  }
+  .links-container {
+    @include center-row-flex;
+    .nav-link {
+      font-size: var(--small-font);
+      margin-right: 2rem;
+    }
+    .dd-arrow {
+      width: 12px;
+      margin-left: 5px;
+    }
+    @media screen and (max-width: 1024px) {
+      display: none !important;
+    }
+  }
+
+  .flex-right {
+    .user-options-container {
+      @include center-row-flex;
+      .user-login-container {
+        width: 2.5rem;
+        .profile-icon {
+          width: 100%;
+          &:hover {
+            filter: brightness(1.5);
+          }
+        }
+      }
+      @media screen and (max-width: 326px) {
+        flex-wrap: wrap !important;
+        .user-search-container {
+          margin-left: 0;
+          margin-top: 0.5rem;
+        }
+      }
+    }
+    .user-login-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 5px;
+    }
+    .user-search-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 2rem;
+      width: 7rem;
+      p {
+        color: var(--almost-white);
+      }
+      .flex-search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--blueish);
+        width: 100%;
+        height: 2.5rem;
+        border-radius: 50px;
+        &:hover {
+          filter: brightness(1.5);
+        }
+      }
+      .us-word p {
+        vertical-align: middle;
+        align-self: center;
+        margin-top: 1rem;
+      }
+      .us-i-container {
+        padding-left: 10px;
+        padding-top: 2px;
+      }
+      .user-search {
+        width: 14px;
+      }
+    }
+  }
+}
+
+// STYLES FOR OVERLAY
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #4141418a;
+  z-index: 10;
+}
+
+// STYLES FOR SIDE NAVBAR
+.side-navbar {
+  position: absolute;
+  width: 25rem;
+  height: 100%;
+  background-color: var(--almost-white);
+  z-index: 11;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+  .top-side-container {
+    @include space-between-flex();
+    width: 100%;
+    box-shadow: var(--simple-box-shadow);
+    padding: 0 2rem 0 1.5rem;
+  }
+  .side-logo {
+    width: 4rem;
+  }
+  .exit-link {
+    background-color: var(--nav-hover);
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    &:hover {
+      background-color: var(--blueish);
+      color: var(--almost-white);
+      filter: brightness(1.5) !important;
+    }
+  }
+
+  .future-container,
+  .current-container,
+  .about-container,
+  .more-container {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  .future-link,
+  .current-link,
+  .about-link,
+  .more-link {
+    @include space-between-flex();
+    border-bottom: solid 1px var(--almost-black);
+    padding: 1.5rem 1rem 0.5rem;
+    &:hover {
+      background-color: var(--nav-hover);
+    }
+
+    .dd-arrow {
+      width: 1rem;
+    }
+  }
+
+  .side-res-login-btn-container {
+    @include center-row-flex();
+    margin-top: 4.5rem;
+    .side-res-login-btn {
+      background-color: var(--blueish);
+      color: var(--almost-white);
+      padding: 0.65rem 6rem;
+      border-radius: 10px;
+      &:hover {
+        filter: brightness(1.5) !important;
+      }
+      @media screen and (max-width: 375px) {
+        padding: 0.65rem 3rem;
+        @include center-row-flex();
+        word-break: break-all;
+      }
+    }
+  }
+}
+
+// STYLES FOR HEADER
+.header-container {
+  width: 100%;
+  height: 40rem;
+  padding-top: 6rem;
+}
+.main-show-container {
+  height: 32rem;
+  border-radius: 15px;
+  background-image: linear-gradient(
+      rgba(61, 61, 61, 0.322),
+      rgba(61, 61, 61, 0.322)
+    ),
+    url(/images/jimmy-dean-Qngdf0kgGB4-unsplash.jpg);
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.big-statement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.must-see {
+  font-size: var(--banner-header);
+  color: var(--almost-white);
+  margin-bottom: -1px;
+  text-align: center;
+}
+.sub-target {
+  text-align: center;
+  color: var(--almost-white);
+  font-size: 1.5rem;
+  max-width: 40rem;
+  margin-top: 1rem;
+}
+
+.user-browse-container {
+  position: absolute;
+  background-color: var(--almost-white);
+  @include space-evenly-flex();
+  border-radius: 50px;
+  max-width: 65rem;
+  top: 35rem;
+  box-shadow: var(--simple-box-shadow);
+  padding: 0 1rem;
+  @include center-row-flex();
+
+  .width-behind {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+  .width-front {
+    position: relative;
+    @include center-row-flex();
+    z-index: 1;
+  }
+
+  .cza-search-container,
+  .price-search-container,
+  .beds-search-container,
+  .baths-search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 2rem;
+    &:hover {
+      background-color: #9b9b9b5b;
+      border-radius: 50px;
+    }
+    .cza-title,
+    .price-title,
+    .beds-title,
+    .baths-title {
+      font-size: var(--small-font);
+      margin-bottom: -0.1rem;
+      color: var(--blueish);
+    }
+    .cza-input,
+    #prices,
+    #beds,
+    #baths {
+      border: none;
+      background-color: inherit;
+      padding: 0;
+      font-size: var(--body-font);
+    }
+    .cza-search-container {
+      line-break: strict;
+    }
+    .cza-input {
+      word-wrap: break-word;
+      overflow: hidden;
+    }
+  }
+  .browse-homes-btn {
+    background-color: var(--blueish);
+    border-radius: 50px;
+    box-shadow: var(--simple-box-shadow);
+    color: var(--almost-white);
+    text-align: center;
+    @include center-row-flex();
+    word-spacing: 100%;
+    width: 12rem;
+    height: 4.3rem;
+    vertical-align: middle;
+    z-index: 1;
+    &:hover {
+      background-color: var(--blueish);
+      filter: brightness(1.5) !important;
+    }
+  }
+}
+// STYLES FOR MAIN SECTION
+.main-padding {
+  margin-top: 3rem;
+  max-width: 946px;
+  width: 100%;
+}
+
+// Styles for Welcome Section
+.welcome-container {
+  @include center-column-flex();
+  text-align: center;
+}
+
+.welcome-header-container {
+  @include center-column-flex();
+  padding: 1rem;
+}
+
+.subheader-container {
+  padding: 1rem;
+  .subheader {
+    text-align: center;
+  }
+}
+
+.welcome-benefits-container {
+  width: 100%;
+  @include space-evenly-flex();
+  .benefits-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 20rem;
+    height: 20rem;
+  }
+  .icon-container {
+    width: 5rem;
+    height: 5rem;
+  }
+  .welcome-icon {
+    width: 100%;
+  }
+  .b-description-container {
+    text-align: center;
+    padding: 1rem 1rem 2rem;
+  }
+}
+
+// Styles for CTA Section
+.cta-container {
+  background-color: var(--greenish);
+  width: 100%;
+  position: absolute;
+  left: 0;
+  @include center-row-flex();
+  .cta-img-container {
+    width: 14rem;
+    margin: 1rem;
+  }
+  .cta-img {
+    width: 100%;
+  }
+  .cta-flex-wrap {
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    width: 30rem;
+  }
+  .cta-statement {
+    color: var(--almost-white);
+    font-style: italic;
+  }
+  .cta-btn {
+    border-bottom: solid 1px var(--almost-black);
+    color: var(--almost-white);
+    &:hover {
+      border-bottom: solid 2px var(--blueish);
+      filter: brightness(1.3) !important;
+    }
+  }
+}
+
+// Styles for Why Section
+.why-container {
+  // background-color: pink;
+  .why-header-container {
+    margin: 25rem 0 3rem 0;
+    h3 {
+      text-align: center;
+    }
+  }
+  .why-id-container {
+    width: 100%;
+    .row {
+      width: 100%;
+      display: flex;
+    }
+    .why-img {
+      width: 100%;
+      border: solid 0.5rem var(--almost-white);
+      box-shadow: var(--simple-box-shadow);
+    }
+    .why-inner-boxes {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .why-answer-container {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+    .why-icon-container {
+      @include center-row-flex();
+      border: solid 2.5px var(--blueish);
+      border-radius: 50px;
+      width: fit-content;
+      height: fit-content;
+      padding: 3px;
+    }
+    .why-icon {
+      width: 2rem;
+    }
+    .why-td-container {
+      display: flex;
+      flex-direction: column;
+      padding: 0 1rem;
+      max-width: 40rem;
+    }
+  }
+}
+
+// Styles for Footer Section
+.footer-content-container {
+  background-color: var(--almost-black);
+  width: 100%;
+  padding: 5rem 0;
+  p,
+  a {
+    color: var(--almost-white);
+  }
+  .main-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    margin-bottom: 2rem;
+    @media screen and (max-width: 818px) {
+      @include center-column-flex();
+      .footer-left-info-container {
+        text-align: center;
+      }
+    }
+  }
+  .footer-logo-container {
+    width: 3rem;
+    margin-right: 1rem;
+  }
+  .footer-logo {
+    width: 100%;
+  }
+  .fs-container {
+    text-align: center;
+  }
+  .social-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .social-icon {
+    width: 2rem;
+    padding-left: 10px;
+  }
+  .social-link-instagram {
+    border: solid 2px var(--almost-white);
+    border-radius: 50px;
+    width: 1.6rem;
+    margin-left: 10px;
+  }
+  .footer-bottom {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 2rem;
+    line-height: 0.8rem;
+  }
+  .eh-i-container {
+    @include center-row-flex();
+    width: 2.3rem;
+  }
+  .eh-icon {
+    margin-right: 1.5rem;
+    width: 100%;
+  }
+  .bottom-link-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    a {
+      &:hover {
+        color: var(--blueish);
+        filter: brightness(1.7);
+      }
+    }
+  }
+}
+
+// Media Queries for Mobile & Tablet
+@media screen and (max-width: 964px) {
+  .header-container {
+    padding-top: 3rem;
+  }
+  .user-browse-container {
+    top: 30rem;
+    width: 100%;
+    flex-direction: column;
+    padding: 1rem 1rem;
+  }
+  .must-see {
+    font-size: 4rem;
+  }
+  .cza-search-container,
+  .price-search-container,
+  .beds-search-container,
+  .baths-search-container {
+    border: solid 1px #40404038;
+    border-radius: 50px;
+    align-self: start;
+    width: 100%;
+    padding: 1rem 1rem !important;
+    margin-bottom: 1rem;
+  }
+  .width-front {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .browse-homes-btn {
+    width: 100%;
+    text-align: center;
+    a {
+      color: var(--almost-white);
+    }
+  }
+  .welcome-container {
+    margin-top: 18rem;
+  }
+  .welcome-benefits-container {
+    @media screen and (max-width: 714px) {
+      @include center-column-flex();
+      .benefits-box {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  .cta-container {
+    @include center-column-flex();
+    .cta-statement {
+      text-align: center;
+    }
+    .cta-btn-container {
+      width: 100%;
+      @include center-row-flex();
+    }
+    .cta-flex-wrap {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  .why-container {
+    padding-top: 8rem;
+    @media screen and (max-width: 606px) {
+      padding-top: 11rem;
+    }
+    @media screen and (max-width: 354px) {
+      padding-top: 14rem;
+    }
+  }
+  .row {
+    flex-direction: column;
+  }
+  .together {
+    margin-bottom: 0 !important;
+  }
+  .why-inner-boxes {
+    @include center-row-flex();
+  }
+  .why-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .why-img {
+    width: 80% !important;
+  }
+  .why-answer-container {
+    width: 80%;
+  }
+}

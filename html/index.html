@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/dist/styles.css" />
+    <title>Find Your Home | FPM Home</title>
+  </head>
+  <body>
+    <!-- OVERLAY -->
+    <div class="overlay hidden"></div>
+
+    <!-- SIDE NAVBAR -->
+    <div class="side-navbar hidden">
+      <!-- Row 1 -->
+      <div class="top-side-container">
+        <div class="side-logo-container">
+          <a href="#">
+            <img
+              src="/images/Forval Prop Mgmt Logo.png"
+              alt=""
+              class="side-logo"
+            />
+          </a>
+        </div>
+        <div class="exit-btn-container">
+          <!--replace x with exit icon-->
+          <a href="#" class="exit-link">x</a>
+        </div>
+      </div>
+      <!-- SIDE NAV LINKS -->
+      <div class="future-container">
+        <a href="#" class="future-link">
+          <div class="future-target">Future Residents</div>
+          <!-- replace with dropdown arrow -->
+          <div class="future-arrow">
+            <img src="/images/dd-arrow.png" alt="" class="dd-arrow" />
+          </div>
+        </a>
+      </div>
+      <div class="current-container">
+        <a href="#" class="current-link">
+          <div class="current-target">Residents</div>
+          <!-- replace with dropdown arrow -->
+          <div class="current-arrow">
+            <img src="/images/dd-arrow.png" alt="" class="dd-arrow" />
+          </div>
+        </a>
+      </div>
+      <div class="about-container">
+        <a href="#" class="about-link">
+          <div class="about-target">About</div>
+        </a>
+      </div>
+      <div class="more-container">
+        <a href="#" class="more-link">
+          <div class="more-target">More</div>
+          <!-- replace with dropdown arrow -->
+          <div class="more-arrow">
+            <img src="/images/dd-arrow.png" alt="" class="dd-arrow" />
+          </div>
+        </a>
+      </div>
+      <div class="side-res-login-btn-container">
+        <a href="#" class="side-res-login-btn">Resident Log In</a>
+      </div>
+    </div>
+
+    <!-- WRAPPER -->
+    <div class="wrapper">
+      <!-- NAVIGATION -->
+      <div class="navbar-container">
+        <div class="flex-left">
+          <div class="hamburger-container">
+            <a href="#" class="hamburger-link">
+              <div class="bars"></div>
+              <div class="bars"></div>
+              <div class="bars"></div>
+            </a>
+          </div>
+          <div class="logo-container">
+            <a href="#">
+              <img
+                src="/images/Forval Prop Mgmt Logo.png"
+                alt="Company logo"
+                class="top-logo"
+              />
+            </a>
+          </div>
+          <div class="links-container">
+            <a class="nav-link" href="#">Future Residents</a>
+            <a class="nav-link" href="#">Residents</a>
+            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#">More </a>
+          </div>
+        </div>
+        <div class="flex-right">
+          <div class="user-options-container">
+            <div class="user-login-container">
+              <a href="#"
+                ><img
+                  src="/images/profile-icon.png"
+                  alt=""
+                  class="profile-icon"
+              /></a>
+            </div>
+            <div class="user-search-container">
+              <a class="flex-search" href="#">
+                <div class="us-word">
+                  <p>Search</p>
+                </div>
+                <div class="us-i-container">
+                  <img
+                    src="/images/search-icon.png"
+                    alt=""
+                    class="user-search"
+                  />
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HEADER BODY -->
+      <div class="header-container">
+        <div class="main-show-container">
+          <div class="big-statement">
+            <h1 class="must-see">Feel right at home</h1>
+            <p class="sub-target">
+              The new way to rent a home that's as easy as opening the door.
+            </p>
+          </div>
+
+          <!-- User Browse Container -->
+          <div class="user-browse-container">
+            <div class="width-behind">
+              <div class="cza-search-container">
+                <p class="cza-title">SEARCH</p>
+                <input
+                  class="cza-input"
+                  type="text"
+                  placeholder="Enter a city or ZIP Code"
+                />
+              </div>
+            </div>
+            <div class="width-front">
+              <div class="price-search-container">
+                <p class="price-title">PRICE</p>
+                <select name="prices" id="prices">
+                  <option value="price">Max price</option>
+                  <option value="price">Up to $1,400</option>
+                  <option value="price">Up to $1,600</option>
+                  <option value="price">Up to $1,800</option>
+                  <option value="price">Up to $2,000</option>
+                </select>
+              </div>
+              <div class="beds-search-container">
+                <p class="beds-title">BEDS</p>
+                <select name="beds" id="beds">
+                  <option value="bed">Min beds</option>
+                  <option value="bed">1+</option>
+                  <option value="bed">2+</option>
+                  <option value="bed">3+</option>
+                  <option value="bed">4+</option>
+                </select>
+              </div>
+              <div class="baths-search-container">
+                <p class="baths-title">BATHS</p>
+                <select name="baths" id="baths">
+                  <option value="bath">Min baths</option>
+                  <option value="bath">1+</option>
+                  <option value="bath">2+</option>
+                  <option value="bath">3+</option>
+                  <option value="bath">4+</option>
+                </select>
+              </div>
+              <a class="browse-homes-btn" href="#"> Browse homes </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN SECTION -->
+      <main class="main-padding">
+        <!-- Welcome Section -->
+        <section>
+          <div class="welcome-container">
+            <div class="welcome-header-container">
+              <h3 class="welcome-header-target">
+                Forval Property Management welcomes you home
+              </h3>
+            </div>
+            <div class="subheader-container">
+              <p class="subheader">
+                At Forval Property Management, we provide our residents with an
+                affordable home, convenient self-tours, and a team of customer
+                service experts. Your only task is finding what you love.
+              </p>
+            </div>
+            <div class="welcome-benefits-container">
+              <div class="benefits-box">
+                <div class="icon-container">
+                  <img
+                    src="/images/renovation.png"
+                    alt=""
+                    class="welcome-icon"
+                  />
+                </div>
+                <div class="b-description-container">
+                  <p>
+                    Each home has been renovated to increase the functionality
+                    and aesthetic. This process includes neutral colors, stylish
+                    fixtures and an appliance package.
+                  </p>
+                </div>
+              </div>
+              <div class="benefits-box">
+                <div class="icon-container">
+                  <img src="/images/design.png" alt="" class="welcome-icon" />
+                </div>
+                <div class="b-description-container">
+                  <p>
+                    We strive to provide you with a beautifully crafted design
+                    so you’ll feel right at home.
+                  </p>
+                </div>
+              </div>
+              <div class="benefits-box">
+                <div class="icon-container">
+                  <img
+                    src="/images/single-family.png"
+                    alt=""
+                    class="welcome-icon"
+                  />
+                </div>
+                <div class="b-description-container">
+                  <p>
+                    With more than 34,000 properties in dozens of markets, Main
+                    Street Renewal is one of the country’s largest providers of
+                    single-family homes.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-container">
+          <div class="cta-img-container">
+            <img src="/images/dial.png" alt="" class="cta-img" />
+          </div>
+          <div class="cta-flex-wrap">
+            <div class="cta-statement-container">
+              <h2 class="cta-statement">Ready to find your new home?</h2>
+            </div>
+            <div class="cta-btn-container">
+              <a class="cta-btn" href="#">Learn how to self tour</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Why Section -->
+        <section class="why-container">
+          <div class="why-header-container">
+            <h3>Why Choose Forval Property Management?</h3>
+          </div>
+          <!-- Row 1 -->
+          <div class="why-id-container together">
+            <div class="row">
+              <div class="why-inner-boxes">
+                <div class="why-answer-container">
+                  <div class="why-icon-container">
+                    <img src="/images/money-icon.png" alt="" class="why-icon" />
+                  </div>
+                  <div class="why-td-container">
+                    <p class="why-title bold">Affordable</p>
+                    <p class="why-details">
+                      Our rent prices are often less than the cost of a
+                      mortgage, and most maintenance is free. Feel confident in
+                      knowing our prices are highly competitive.
+                    </p>
+                  </div>
+                </div>
+                <div class="why-answer-container">
+                  <div class="why-icon-container">
+                    <img
+                      src="/images/convenient-icon.png"
+                      alt=""
+                      class="why-icon"
+                    />
+                  </div>
+                  <div class="why-td-container">
+                    <p class="why-title bold">Convenient</p>
+                    <p class="why-details">
+                      Enjoy self-tours available seven days a week from 8am –
+                      8pm. Tour when it’s convenient for your schedule.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="why-img-container">
+                <img src="/images/home-house.jpg" alt="" class="why-img" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="why-id-container">
+            <div class="row reverse">
+              <div class="why-inner-boxes">
+                <div class="why-answer-container">
+                  <div class="why-icon-container">
+                    <img
+                      src="/images/maintained-icon.png"
+                      alt=""
+                      class="why-icon"
+                    />
+                  </div>
+                  <div class="why-td-container">
+                    <p class="why-title bold">Well-maintained</p>
+                    <p class="why-details">
+                      We offer modern home renovations. We pride ourselves on
+                      providing our Residents with a beautiful home.
+                    </p>
+                  </div>
+                </div>
+                <div class="why-answer-container">
+                  <div class="why-icon-container">
+                    <img
+                      src="/images/trustworthy-icon.png"
+                      alt=""
+                      class="why-icon"
+                    />
+                  </div>
+                  <div class="why-td-container">
+                    <p class="why-title bold">Trustworthy</p>
+                    <p class="why-details">
+                      We are a national organization with high standards in
+                      property management. Our customer team is here for you.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="why-img-container">
+                <img
+                  src="/images/home-family.jpg"
+                  alt="picture of a male and female cooking in a kitchen"
+                  class="why-img"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content-container">
+        <div class="main-container f-wrapper">
+          <div class="footer-left footer-width column-left f-padding">
+            <div class="footer-left-info-container column-left f-padding">
+              <p class="footer-statement bold">
+                Forval Property Management is a licensed real estate brokerage.
+              </p>
+              <p class="footer-statement">
+                We are focused on renovating and leasing homes across the
+                country. We are proudly based in Austin, TX and have branches in
+                30 cities with more coming soon.
+              </p>
+            </div>
+          </div>
+          <div class="footer-middle footer-width column-middle f-padding">
+            <a href="#" class="footer-links">Sell + Stay</a>
+            <a href="#" class="footer-links">Agents </a>
+            <a href="#" class="footer-links">Contractors </a>
+            <a href="#" class="footer-links">Contact Us </a>
+            <a href="#" class="footer-links">Join our team </a>
+            <a href="#" class="footer-links">Report a scam </a>
+          </div>
+          <div class="footer-right footer-width">
+            <div class="fs-container">
+              <p class="social-statement">Stay Connected</p>
+            </div>
+            <div class="social-container">
+              <a href="#" class="social-link">
+                <img
+                  src="/images/facebook-white.png"
+                  alt=""
+                  class="social-icon"
+                />
+              </a>
+              <a href="#" class="social-link">
+                <img
+                  src="/images/instagram-white.png"
+                  alt=""
+                  class="social-link-instagram"
+                />
+              </a>
+              <a href="#" class="social-link">
+                <img
+                  src="/images/linkedin-white.png"
+                  alt=""
+                  class="social-icon"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom f-wrapper">
+          <div class="footer-logo-container">
+            <a href="#">
+              <img
+                src="/images/Forval Prop Mgmt Logo.png"
+                alt=""
+                class="footer-logo"
+              />
+            </a>
+          </div>
+          <div class="eh-i-container">
+            <img src="/images/eh-icon.png" alt="" class="eh-icon" />
+          </div>
+          <div class="bottom-link-container">
+            <p class="copyright away-right">©2023 Forval Property Management</p>
+            <a href="#" class="bottom-link away-right">Terms and Conditions</a>
+            <a href="#" class="bottom-link away-right"> Privacy Policy</a>
+            <a href="#" class="bottom-link away-right">
+              TREC Info About Brokerage Services</a
+            >
+            <a href="#" class="bottom-link away-right"
+              >TREC Consumer Protection Notice
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="/js/index.js"></script>
+  </body>
+</html>
