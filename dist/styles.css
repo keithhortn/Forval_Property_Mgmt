@@ -400,6 +400,12 @@ a:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-shadow: 1px 1px 8px var(--almost-black);
+}
+@media only screen and (max-width: 768px) {
+  .big-statement {
+    padding: 0 1rem !important;
+  }
 }
 
 .must-see {
@@ -407,6 +413,11 @@ a:active {
   color: var(--almost-white);
   margin-bottom: -1px;
   text-align: center;
+}
+@media only screen and (max-width: 350px) {
+  .must-see {
+    font-size: 3rem !important;
+  }
 }
 
 .sub-target {
@@ -432,6 +443,11 @@ a:active {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media only screen and (max-width: 337px) {
+  .user-browse-container {
+    top: 31rem !important;
+  }
 }
 .user-browse-container .width-behind {
   position: relative;
@@ -559,6 +575,10 @@ a:active {
   padding: 1rem;
 }
 
+.welcome-header-target {
+  line-height: 2rem;
+}
+
 .subheader-container {
   padding: 1rem;
 }
@@ -612,7 +632,7 @@ a:active {
   padding: 1rem 1.5rem;
   display: flex;
   flex-wrap: wrap;
-  width: 30rem;
+  width: 28rem;
 }
 .cta-container .cta-statement {
   color: var(--almost-white);
@@ -921,6 +941,7 @@ a:active {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2.5rem;
   }
 }
 @media screen and (max-width: 964px) {
